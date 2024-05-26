@@ -41,10 +41,7 @@ headers = {
 
 while True:
  def date():
-        months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
-                  'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
-        day, month, year = time.strftime("%d.%m.%Y", time.localtime()).split('.')
-        return f'{day} {months[int(month) - 1]} {time.strftime("%H:%M", time.localtime())}'
+        return f'<t:{int(datetime.timestamp(datetime.now()))}:F>'
  def timedelta():
      timedelta = datetime(day=1, month=6, year=datetime.now().year) - datetime.now()
      days = str(timedelta).split(':')[0].split('days')[0].replace(" ", "")
@@ -59,3 +56,4 @@ while True:
  print(date())
  print(timedelta())
  time.sleep(60)
+
